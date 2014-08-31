@@ -26,9 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor purpleColor];
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Hello!" message:@"Welcome to OpenCV" delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
-    [alert show];
+    
+    
+    
+//    self.view.backgroundColor = [UIColor purpleColor];
+//    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Hello!" message:@"Welcome to OpenCV" delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
+//    [alert show];
     // Do any additional setup after loading the view.
 }
 

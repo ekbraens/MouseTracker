@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D598CF2D19B25062007B74EE /* ViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D598CF2C19B25062007B74EE /* ViewViewController.xib */; };
 		D5C327AF19AC5C5300D50727 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C327AE19AC5C5300D50727 /* Foundation.framework */; };
 		D5C327B119AC5C5300D50727 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C327B019AC5C5300D50727 /* CoreGraphics.framework */; };
 		D5C327B319AC5C5300D50727 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C327B219AC5C5300D50727 /* UIKit.framework */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D598CF2C19B25062007B74EE /* ViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewViewController.xib; sourceTree = "<group>"; };
 		D5C327AB19AC5C5300D50727 /* MouseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MouseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C327AE19AC5C5300D50727 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D5C327B019AC5C5300D50727 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,6 +120,7 @@
 				D5C327BE19AC5C5300D50727 /* AppDelegate.m */,
 				D5C327DF19AC5E9200D50727 /* ViewViewController.h */,
 				D5C327E019AC5E9200D50727 /* ViewViewController.m */,
+				D598CF2C19B25062007B74EE /* ViewViewController.xib */,
 				D5C327C019AC5C5300D50727 /* Images.xcassets */,
 				D5C327B519AC5C5300D50727 /* Supporting Files */,
 			);
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5C327B919AC5C5300D50727 /* InfoPlist.strings in Resources */,
+				D598CF2D19B25062007B74EE /* ViewViewController.xib in Resources */,
 				D5C327C119AC5C5300D50727 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +459,7 @@
 				D5C327D919AC5C5300D50727 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5C327DA19AC5C5300D50727 /* Build configuration list for PBXNativeTarget "MouseTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +468,7 @@
 				D5C327DC19AC5C5300D50727 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
