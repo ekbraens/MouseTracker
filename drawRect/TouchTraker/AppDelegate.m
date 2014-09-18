@@ -18,7 +18,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     DrawViewController * dvc = [[DrawViewController alloc] init];
-    self.window.rootViewController = dvc;
+    UINavigationController * navCon = [[UINavigationController alloc] initWithRootViewController:dvc];
+    self.window.rootViewController = navCon;
     
     [self.window makeKeyAndVisible];
     return YES;

@@ -10,4 +10,6 @@
 
 @interface DrawView : UIView
 
+@property (nonatomic,strong) NSMutableArray * finishedRectangles;
+
 @end
