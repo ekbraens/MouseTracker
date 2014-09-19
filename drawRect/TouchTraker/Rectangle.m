@@ -10,4 +10,15 @@
 
 @implementation Rectangle
 
+- (NSString *)description
+{
+    NSString *descriptionString =
+    [[NSString alloc] initWithFormat:@"%f, %f",
+     ((self.endPoint.x - self.startPoint.x)/2 + self.startPoint.x),
+     ((self.endPoint.y - self.startPoint.y)/2 + self.startPoint.y)];
+    
+    return descriptionString;
+}
+
+
 @end

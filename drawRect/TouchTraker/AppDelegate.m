@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DrawViewController.h"
+#import "TableListViewController.h"
 
 @implementation AppDelegate
 
@@ -18,8 +19,20 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     DrawViewController * dvc = [[DrawViewController alloc] init];
-    UINavigationController * navCon = [[UINavigationController alloc] initWithRootViewController:dvc];
-    self.window.rootViewController = navCon;
+    
+    // controls for navigation and swipes disabled for now
+    //UINavigationController * navCon = [[UINavigationController alloc] initWithRootViewController:dvc];
+    
+    // controls for the uitabbarcontroller
+    TableListViewController * tlvc = [[TableListViewController alloc] init];
+    UITabBarController * tbc = [[UITabBarController alloc] init];
+    // transfer rectangles drawn to the rectangles in the tableview
+    tlvc.allRects = dvc.theView.finishedRectangles;
+    tbc.viewControllers = @[dvc, tlvc];
+    self.window.rootViewController = tbc;
+    
+    // for only using the drawing view as the view first seen
+    //self.window.rootViewController = dvc;
     
     [self.window makeKeyAndVisible];
     return YES;

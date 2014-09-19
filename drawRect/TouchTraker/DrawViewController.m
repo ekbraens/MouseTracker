@@ -10,12 +10,15 @@
 #import "TableListViewController.h"
 #import "DrawView.h"
 
+/*
+ if i want to go back to navcontroller
 @interface DrawViewController()
 
 @property (nonatomic, strong) DrawView * theView;
 
 @end
-
+*/
+ 
 @implementation DrawViewController
 
 -(instancetype)init
@@ -25,11 +28,13 @@
     {
         _theView = [[DrawView alloc] initWithFrame:CGRectZero];
         
+        /*
         UISwipeGestureRecognizer * swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeft:)];
         swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
         swipeLeft.numberOfTouchesRequired = 1;
         swipeLeft.delaysTouchesBegan = YES;
         [self.view addGestureRecognizer:swipeLeft];
+         */
     }
     
     return self;
@@ -40,6 +45,7 @@
     self.view = _theView;
 }
 
+/*
 -(void)swipeLeft:(UIGestureRecognizer *)gr
 {
     TableListViewController * tlvc = [[TableListViewController alloc] init];
@@ -47,5 +53,6 @@
     
     [self.navigationController pushViewController:tlvc animated:YES];
 }
-
+*/
+    
 @end

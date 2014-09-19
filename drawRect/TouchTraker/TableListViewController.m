@@ -7,6 +7,7 @@
 //
 
 #import "TableListViewController.h"
+#import "Rectangle.h"
 #import "DrawView.h"
 
 @interface TableListViewController ()
@@ -56,7 +57,11 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     
     //cell.textLabel.text = item.description;
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", _allRects[indexPath.row]];
+    Rectangle * rectangle = _allRects[indexPath.row];
+    cell.textLabel.text = rectangle.description;
+    
+    // old way to show rectangles
+    //cell.textLabel.text = [NSString stringWithFormat:@"%@", _allRects[indexPath.row]];
 
     return cell;
 }

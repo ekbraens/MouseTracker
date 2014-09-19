@@ -41,11 +41,6 @@
     
     CGPoint location = [t locationInView:self];
     
-//    // from the BNR creating lines
-//    self.currentLine = [[Line alloc] init];
-//    self.currentLine.startPoint = location;
-//    self.currentLine.endPoint = location;
-    
     // my go at it with rectangles
     self.currentRectangle = [[Rectangle alloc] init];
     self.currentRectangle.startPoint = location;
@@ -59,26 +54,20 @@
     UITouch * t = [touches anyObject];
     CGPoint location = [t locationInView:self];
     
-//    // from the BNR creating lines
-//    self.currentLine.endPoint = location;
-    
     // my go at it with retangles
     self.currentRectangle.endPoint = location;
-    self.currentRectangle.rectHeight = self.currentRectangle.startPoint.y - self.currentRectangle.endPoint.y;
-    self.currentRectangle.rectWidth = self.currentRectangle.startPoint.x - self.currentRectangle.endPoint.x;
+    self.currentRectangle.rectHeight = self.currentRectangle.endPoint.y - self.currentRectangle.startPoint.y;
+    self.currentRectangle.rectWidth = self.currentRectangle.endPoint.x - self.currentRectangle.startPoint.x;
     
     [self setNeedsDisplay];
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-//    // form the BNR creating lines
-//    [self.finishedLines addObject:self.currentLine];
-//    self.currentLine = nil;
     if (_deleting == NO)
     {
         // my go at it with rectangles
-        CGRect newRectangle = CGRectMake(_currentRectangle.startPoint.x, _currentRectangle.startPoint.y, _currentRectangle.rectHeight, _currentRectangle.rectWidth);
+        CGRect newRectangle = CGRectMake(_currentRectangle.startPoint.x, _currentRectangle.startPoint.y, _currentRectangle.rectWidth, _currentRectangle.rectHeight);
         [self.cgrectArray addObject:[NSValue valueWithCGRect:newRectangle]];
         [self.finishedRectangles addObject:self.currentRectangle];
         self.currentRectangle = nil;
@@ -91,21 +80,16 @@
 {
     // Draw finished lines in black
     [[UIColor blackColor] set];
-//    for (Line * line in self.finishedLines)
-//    {
-//        [self strokeLine:line];
-//    }
+
     for (Rectangle * rectangle in self.finishedRectangles)
     {
         [self makeRect:rectangle];
     }
-//    // from the BNR creating lines
-//    if (self.currentLine)
+
     if (self.currentRectangle)
     {
         [[UIColor redColor] set];
-//        // from the BNR creating lines
-//        [self strokeLine:self.currentLine];
+
         
         [self makeRect:self.currentRectangle];
     }
@@ -128,7 +112,7 @@
     bp.lineWidth = 10;
     
     [bp moveToPoint:rectangle.startPoint];
-    CGRect newRectangle = CGRectMake(rectangle.startPoint.x, rectangle.startPoint.y, rectangle.rectHeight, rectangle.rectWidth);
+    CGRect newRectangle = CGRectMake(rectangle.startPoint.x, rectangle.startPoint.y, rectangle.rectWidth, rectangle.rectHeight);
     bp = [UIBezierPath bezierPathWithRect:newRectangle];
     
     [bp stroke];
@@ -140,7 +124,6 @@
     
     if (self)
     {
-        //self.finishedLines = [[NSMutableArray alloc] init];
         self.finishedRectangles = [[NSMutableArray alloc] init];
         self.cgrectArray = [[NSMutableArray alloc] init];
         self.backgroundColor = [UIColor grayColor];

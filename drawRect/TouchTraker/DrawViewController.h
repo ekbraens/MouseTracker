@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DrawView.h"
 
 @interface DrawViewController : UIViewController
+
+@property (nonatomic, strong) DrawView * theView;
 
 @end
